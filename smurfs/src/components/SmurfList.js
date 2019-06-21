@@ -3,8 +3,7 @@ import Smurf from './Smurf';
 
 const SmurfList = props => {
   return (
-    <div>
-      <h1>Smurf List</h1>
+    <div className="d-flex flex-row flex-wrap">
       {props.smurfs.map(smurf => (
         <Smurf smurf={smurf} key={smurf.id} />
       ))}

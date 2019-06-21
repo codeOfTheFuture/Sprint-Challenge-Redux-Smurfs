@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { addSmurf } from '../actions';
 import { connect } from 'react-redux';
 
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+
 class AddSmurfForm extends Component {
   state = {
     name: '',
@@ -22,39 +24,44 @@ class AddSmurfForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addSmurf}>
-        <div>
-          <label>Name</label>
-          <input
+      <Form
+        onSubmit={this.addSmurf}
+        className="d-flex flex-column justify-content-start my-3"
+      >
+        <FormGroup>
+          <Form.Label>Name</Form.Label>
+          <FormControl
             type="text"
             placeholder="Name"
             name="name"
             value={this.state.name}
             onChange={this.onInputChanges}
           />
-        </div>
-        <div>
-          <label>Age</label>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Form.Label>Age</Form.Label>
+          <FormControl
             type="text"
             placeholder="Age"
             name="age"
             value={this.state.age}
             onChange={this.onInputChanges}
           />
-        </div>
-        <div>
-          <label>Height</label>
-          <input
+        </FormGroup>
+        <FormGroup>
+          <Form.Label>Height</Form.Label>
+          <FormControl
             type="text"
             placeholder="Height"
             name="height"
             value={this.state.height}
             onChange={this.onInputChanges}
           />
-        </div>
-        <button type="submit">Add Smurf</button>
-      </form>
+        </FormGroup>
+        <Button type="submit" variant="outline-primary">
+          Add Smurf
+        </Button>
+      </Form>
     );
   }
 }

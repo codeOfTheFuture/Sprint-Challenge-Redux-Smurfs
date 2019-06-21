@@ -3,6 +3,8 @@ import AddSmurfForm from './AddSmurfForm';
 import SmurfList from './SmurfList';
 import { connect } from 'react-redux';
 import { getSmurfs } from '../actions';
+
+import { Container } from 'react-bootstrap';
 import './App.css';
 
 class App extends Component {
@@ -12,12 +14,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
+      <Container className="App d-flex flex-column justify-content-center align-items-center">
+        <h1 className="text-primary">SMURFS! 2.0 W/ Redux</h1>
+        <div className="text-dark">
+          Welcome to your Redux version of Smurfs!
+        </div>
         <AddSmurfForm />
         <SmurfList smurfs={this.props.smurfs} />
-      </div>
+      </Container>
     );
   }
 }
